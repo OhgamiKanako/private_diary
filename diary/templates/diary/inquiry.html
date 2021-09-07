@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block title %}お問い合わせ|Private Diary{% endblock %}
-{% block active_inquiry %}active{% endblock %}
 
 {% block contents %}
 <section id="scroll">
@@ -12,6 +11,7 @@
             <form method="post">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
+                
                 {% for field in form %}
                 <div class="form-group row">
                     <label for="{{ field.id_for_label }}" class="col-sm-4 col-form-label">
