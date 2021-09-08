@@ -1,13 +1,13 @@
 import logging
 
 from django.http.response import HttpResponse
-from django.shortcuts import render
 from django.views import generic
-from .forms import InquiryForm
+from django.shortcuts import render
+from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
-from .forms import generic
-from django.contrib import messages
+from .forms import InquiryForm
+# from .forms import generic
 
 logger = logging.getLogger(__name__)
 
@@ -26,5 +26,5 @@ class InquiryView(generic.FormView):
     def from_valid(self, form):
         form.send_email()
         messages.success(self.request, 'メッセージを送信しました。')
-        logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
+        # logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
