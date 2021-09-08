@@ -43,6 +43,24 @@
 
         <!-- Header-->
         {% block header %}{% endblock %}
+
+        {% if messages %}
+        <div class="container">
+            <div class="row">
+                <div class="my-div-style w-100">
+                    <ul class="messages" style="list-style: none;">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            {{ message }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% block contets %}{% endblock %}
         <!-- Content -->
         {% block contents %}{% endblock %}
         
