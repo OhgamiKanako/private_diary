@@ -26,5 +26,5 @@ class InquiryView(generic.FormView):
     def from_valid(self, form):
         form.send_email()
         messages.success(self.request, 'メッセージを送信しました。')
-        # logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
+        # logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))ここ保留
         return super().form_valid(form)
