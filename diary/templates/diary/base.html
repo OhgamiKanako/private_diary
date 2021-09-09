@@ -50,7 +50,7 @@
                 <div class="my-div-style w-100">
                     <ul class="messages" style="list-style: none;">
                         {% for msg in messages %}
-                        <li {% if message.tags %} class="{{ msg.tags }}" {% endif %}>
+                        <li {% if msg.tags %} class="{{ msg.tags }}" {% endif %}>
                             {{ msg }}
                         </li>
                         {% endfor %}

@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'diary.apps.DiaryConfig',
+    'accounts.apps.AccountsConfig',
+
+    # 'django.contrib.sites',
+    # 'allauth',
+    # 'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +141,27 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'alert alert-success',
     messages.INFO: 'alert alert-info',
 }
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# #django-allauthで利用するdjango.contrib.sitesを使うためにサイト識別用IDを設定
+# SITE_ID = 1
+
+# AUTHENTICATION_BACKENDS = (
+#     'allauth.account.auth_backends.AuthenticationBackend',
+#     #一般ユーザー用（メルアド認証）
+#     'django.contrib.auth.backends.ModelBackend',
+#     #管理サイト用（ユーザー名認証）
+# )
+
+# #メルアド認証に変更する設定
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# ACCOUNT_USERNAME_REQUIRED = False
+
+# #サインアップにメルアド確認をはさむよう設定
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_REQUIRED = True
+
+# #ログイン/ログアウト後の偏移先を設定
+# LOGIN_REDIRECT_URL = 'diary:index'
+# ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
