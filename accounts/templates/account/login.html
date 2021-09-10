@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-{% extends "account/base.html" %}
-
-{% load i18n %}
-
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
-
-{% block content %}
-
-<h1>{% trans "Sign In" %}</h1>
-
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
-
-=======
 {% extends "diary/base.html" %}
 
 {% block title %}Log In|Private Diary{% endblock %}
@@ -45,5 +20,3 @@
     </div>
   </div>
 </div>
->>>>>>> 1b784307d71122da75ddd377ee656b0bce1b2f33
-{% endblock %}

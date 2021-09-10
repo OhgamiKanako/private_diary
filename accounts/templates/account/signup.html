@@ -1,12 +1,6 @@
 {% extends "diary/base.html" %}
-
-<<<<<<< HEAD
-{% block title %}サインアップ|Private　Diary{% endblock %}
-=======
 {% block title %}サインアップ|Private Diary{% endblock %}
 {% block active_signup %}active{% endblock %}
->>>>>>> 1b784307d71122da75ddd377ee656b0bce1b2f33
-
 {% block contents %}
 <div class="container">
   <div class="row">
@@ -14,23 +8,13 @@
       <h1>サインアップ</h1>
       <form method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
-<<<<<<< HEAD
-        {{form.as_p}}
-        {% if redirect_field_value %}
-          <input type="hiddin" name="{{ redirect_field_name }}" value="{{ redirect_field_value}}">
-=======
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
->>>>>>> 1b784307d71122da75ddd377ee656b0bce1b2f33
         {% endif %}
         <button class="btn btn-primary" type="submit">登録</button>
       </form>
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 1b784307d71122da75ddd377ee656b0bce1b2f33
 {% endblock %}
