@@ -1,0 +1,21 @@
+{% extends "diary/base.html" %}
+
+{% block title %}サインアップ|Private　Diary{% endblock %}
+
+{% block contents %}
+<div class="container">
+  <div class="row">
+    <div class="my-div-style">
+      <h1>サインアップ</h1>
+      <form method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{form.as_p}}
+        {% if redirect_field_value %}
+          <input type="hiddin" name="{{ redirect_field_name }}" value="{{ redirect_field_value}}">
+        {% endif %}
+        <button class="btn btn-primary" type="submit">登録</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
