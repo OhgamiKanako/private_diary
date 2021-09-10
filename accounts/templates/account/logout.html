@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "account/base.html" %}
 
 {% load i18n %}
@@ -19,3 +20,27 @@
 
 
 {% endblock %}
+=======
+{% extends "diary/base.html" %}
+
+{% block title %}Log Out|Private Diary{% endblock %}
+{% block active_login %}active{% endblock %}
+
+{% block contents %}
+<div class="container">
+  <div class="row">
+    <div class="my-div-style">
+      <h1>Log Out</h1>
+      <p>ログアウトしますか？</p>
+      <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">ログアウト</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+>>>>>>> 1b784307d71122da75ddd377ee656b0bce1b2f33
