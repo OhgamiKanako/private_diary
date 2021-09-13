@@ -10,7 +10,7 @@
         <div class="my-div-style w-100">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="clearfix">
-                    <a class="btn btn-primary float-right" href="#">新規作成</a>
+                    <a class="btn btn-primary float-right" href="{% url 'diary:diary_create' %}">新規作成</a>
                 </div>
                 {% for diary in diary_list%}
                 <div class="post-preview">
