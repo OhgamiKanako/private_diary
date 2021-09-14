@@ -1,8 +1,4 @@
 {% load i18n %}
 {% autoescape off %}
-<<<<<<< HEAD
-{% blocktrans %}Please Confirm Your E-mail Address{% endblocktrans %}
-=======
 {% blocktrans %}ユーザー登録用メール{% endblocktrans %}
->>>>>>> 1b784307d71122da75ddd377ee656b0bce1b2f33
 {% endautoescape %}
